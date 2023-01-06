@@ -7,7 +7,6 @@ let catchDataMap = new Map();
 let catchMap = new Map();
 
 const https = async (path: string, method = 'GET', isCatch = true): Promise<ICloud.CallContainerResult | null> => {
-    console.log('🚀 > https > path', path, method);
     if (catchMap.has(path)) {
         return null;
     } else {

@@ -1,4 +1,4 @@
-<h1 align="center">wallhaven-mini</h1>
+<h1 align="center">at-will-mini</h1>
 
 <p align="center">
   壁纸客户端微信小程序版本。
@@ -9,8 +9,7 @@
 </p>
 
 ## 开源地址
-- gitee：https://gitee.com/ml13/wallhaven-mini
-- github：https://github.com/MaLuns/wallhaven-mini
+- github：https://github.com/Alie-z/at-will-mini.git
 
 ## UI
 <div>
@@ -33,46 +32,7 @@
 一个简易 Node 实现
 
 ``` js
-const express = require("express");
-const cors = require("cors");
-const morgan = require("morgan");
-const logger = morgan("tiny");
-const { createProxyMiddleware } = require("http-proxy-middleware");
 
-
-const app = express();
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(cors());
-app.use(logger);
-
-const baseURL = 'https://wallhaven.cc/api/v1/'
-
-app.use("/test", (req, res) => {
-  res.send({
-    state: true,
-  });
-})
-
-// baseURL
-app.use("/", createProxyMiddleware({
-  target: baseURL,
-  changeOrigin: true,
-  onProxyReq(proxyReq) {
-    let url = proxyReq.path
-    proxyReq.path = url.replace(/categories=[01]{3}/g, 'categories=100').replace(/purity=[01]{3}/g, 'purity=100')
-  }
-}));
-
-const port = process.env.PORT || 80;
-
-async function bootstrap() {
-  app.listen(port, () => {
-    console.log("启动成功", port);
-  });
-}
-
-bootstrap();
 ```
 
 ### 小程序部署
@@ -96,4 +56,4 @@ export default {
 非常欢迎你的贡献，你可以通过以下方式一起共建 :smiley:：
 
 - 通过 Issue 报告 bug 或进行咨询。
-- 提交 Pull Request 改进 wallhaven-mini 的代码。
+- 提交 Pull Request 改进 at-will-mini 的代码。
