@@ -49,3 +49,4 @@
     </view>
 </view>
 <view class="copyright">Copyright © 2022 At-Will</view>
+<ow-toast id="toast"></ow-toast>

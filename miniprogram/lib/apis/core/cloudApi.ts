@@ -39,6 +39,7 @@ const https = async (path: string, method = 'GET', isCatch = true): Promise<IClo
 class CloudApi extends AbstractApi {
     private favorites: CacheData;
     private historys: CacheData;
+    private isPhoto: CacheData;
 
     constructor() {
         super();
@@ -47,8 +48,17 @@ class CloudApi extends AbstractApi {
         });
         this.favorites = createCacheData('favorites');
         this.historys = createCacheData('historys');
+        this.isPhoto = new CacheData('isPhoto');
     }
-
+    // 设置isPhoto
+    setIsPhoto(val: Boolean): any {
+        console.log('🚀 > setIsPhoto > val', val);
+        return this.isPhoto.setDataSync('isPhoto', val);
+    }
+    // 查询isPhoto
+    getIsPhoto(): any {
+        return this.isPhoto.getDataSync('isPhoto');
+    }
     // 查询接口
     getSearch(pra: SearchForm): ImagesList | Promise<ImagesList> {
         return https('/search?' + objToUrl(pra)).then(res => res?.data);

@@ -40,7 +40,7 @@ export class CacheData {
      * @param id 数据 ID
      * @param data
      */
-    setDataSync(id: string, data: ImageItem) {
+    setDataSync(id: string, data: ImageItem | Boolean) {
         if (!this.has(id)) {
             const list = wx.getStorageSync(this.key) || {};
             this._keys.push(id);
@@ -55,7 +55,7 @@ export class CacheData {
      * 根据 ID 获取数据
      * @param id 数据 ID
      */
-    getDataSync(id: string): ImageItem {
+    getDataSync(id: string): ImageItem | Boolean {
         const list = wx.getStorageSync(this.key) || {};
         return list[id];
     }

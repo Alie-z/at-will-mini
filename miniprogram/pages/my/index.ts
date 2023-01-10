@@ -1,3 +1,4 @@
+import toast from '../../components/ow-toast/toast';
 const app = getApp();
 
 Page({
@@ -5,8 +6,7 @@ Page({
         version: '',
         updateDateTime: app.$config.updateDateTime,
         favorites: 0,
-        historys: 0,
-        switchStatus: false
+        historys: 0
     },
     onShow() {
         let {favorites, historys} = app.$apis.getTotalUserData() as TotalUserData;
@@ -17,8 +17,10 @@ Page({
     },
     onLoad() {
         const acountInfo = wx.getAccountInfoSync();
+        const switchStatus = app.$apis.getIsPhoto();
         this.setData({
-            version: acountInfo.miniProgram.version
+            version: acountInfo.miniProgram.version,
+            switchStatus
         });
     },
     // 打开收藏和历史记录
@@ -47,9 +49,10 @@ Page({
         });
     },
     // 开通图集
-    switchChange(e: WechatMiniprogram.CustomEvent) {
-        this.setData({
-            switchStatus: !this.data.switchStatus
-        });
+    switchChange() {
+        const {switchStatus} = this.data;
+        console.log('🚀 > switchChange > switchStatus', switchStatus);
+        app.$apis.setIsPhoto(!switchStatus);
+        toast.primary(switchStatus ? '已关闭' : '已开通');
     }
 });
