@@ -1,15 +1,13 @@
 {
-  "name": "miniprogram-ts-less-quickstart",
-  "version": "1.0.5",
-  "description": "",
-  "scripts": {
-  },
-  "keywords": [],
-  "author": "",
-  "license": "",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "miniprogram-api-typings": "^2.8.3-1"
-  }
+    "name": "miniprogram-ts-less-quickstart",
+    "version": "1.0.5",
+    "description": "",
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "",
+    "dependencies": {},
+    "devDependencies": {
+        "miniprogram-api-typings": "^3.8.1"
+    }
 }

@@ -5,8 +5,8 @@ Page({
         tips: app.$config.tips
     },
     onLoad() {
-        // setTimeout(() => {
-        //   wx.switchTab({ url: '/pages/index/index' })
-        // }, 2000);
+        app.$apis.test().then(() => {
+            wx.switchTab({url: '/pages/index/index'});
+        });
     }
 });

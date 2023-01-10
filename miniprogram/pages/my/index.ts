@@ -5,7 +5,8 @@ Page({
         version: '',
         updateDateTime: app.$config.updateDateTime,
         favorites: 0,
-        historys: 0
+        historys: 0,
+        switchStatus: false
     },
     onShow() {
         let {favorites, historys} = app.$apis.getTotalUserData() as TotalUserData;
@@ -43,6 +44,12 @@ Page({
                     duration: 1000
                 });
             }
+        });
+    },
+    // 开通图集
+    switchChange(e: WechatMiniprogram.CustomEvent) {
+        this.setData({
+            switchStatus: !this.data.switchStatus
         });
     }
 });

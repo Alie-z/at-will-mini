@@ -20,6 +20,13 @@
     </view>
 </view>
 <view class="one-list sm-border card-menu">
+    <view class="one-item">
+        <view class="content">
+            <text class="icon-dashang-01"></text>
+            <text class="text-grey">开通图集</text>
+        </view>
+        <switch checked="{{ switchStatus }}" bindchange="switchChange"></switch>
+    </view>
     <view class="one-item arrow" data-link="https://github.com/Alie-z/at-will-mini.git" bindtap="handleCopyText">
         <view class="content">
             <text class="icon-github"></text>

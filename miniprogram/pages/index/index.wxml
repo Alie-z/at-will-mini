@@ -11,7 +11,5 @@
 
 <!-- 预览 -->
 <include src="../../lib/mixins/preview/index.wxml" />
-<!-- <ow-preview-page model:show="{{previewShow}}">
-  <ow-image-preview model:show="{{previewShow}}" list="{{previewList}}" index="{{previewIndex}}"></ow-image-preview>
-</ow-preview-page> -->
-<ow-toast id="toast" />
+
+<ow-toast id="toast" ></ow-toast>
