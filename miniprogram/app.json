@@ -4,6 +4,7 @@
         "pages/index/index",
         "pages/categorie/index",
         "pages/view/index",
+        "pages/photo/index",
         "pages/my/index",
         "pages/my/list/index"
     ],
@@ -21,6 +22,10 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页"
+            },
+            {
+                "pagePath": "pages/photo/index",
+                "text": "图集"
             },
             {
                 "pagePath": "pages/categorie/index",

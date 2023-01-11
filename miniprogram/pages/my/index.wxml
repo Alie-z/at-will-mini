@@ -9,13 +9,13 @@
     <view class="user-nav-item" data-type="favorites" bindtap="handleNav">
         <text class="item-number" style="color: #9a65af">{{ favorites }}</text>
         <text class="item-title icon-shoucang">
-            <text>Favorites</text>
+            <text>收藏</text>
         </text>
     </view>
     <view class="user-nav-item" data-type="historys" bindtap="handleNav">
         <text class="item-number" style="color: #87a870">{{ historys }}</text>
         <text class="item-title icon-zuji">
-            <text>Historys</text>
+            <text>历史</text>
         </text>
     </view>
 </view>

@@ -40,8 +40,8 @@ export class CacheData {
      * @param id 数据 ID
      * @param data
      */
-    setDataSync(id: string, data: ImageItem | Boolean) {
-        if (!this.has(id)) {
+    setDataSync(id: string, data: ImageItem | Boolean, isUpdate?: boolean) {
+        if (!this.has(id) || isUpdate) {
             const list = wx.getStorageSync(this.key) || {};
             this._keys.push(id);
             wx.setStorageSync(this.key, {

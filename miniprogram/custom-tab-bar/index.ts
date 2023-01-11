@@ -1,4 +1,5 @@
 import {tabbars, changeTab} from './util';
+const app = getApp();
 
 Component({
     options: {
@@ -7,7 +8,8 @@ Component({
     data: {
         show: true,
         selected: -1,
-        tabbars
+        tabbars,
+        switchStatus: false
     },
     methods: {
         handleClick(e: WechatMiniprogram.BaseEvent) {
@@ -18,9 +20,16 @@ Component({
     lifetimes: {
         ready() {
             let index = changeTab.call(getCurrentPages()[0]);
+            const switchStatus = app.$apis.getIsPhoto();
+            let {tabbars} = this.data;
+            if (!switchStatus) {
+                tabbars.splice(1, 1);
+            }
             if (index > -1) {
                 this.setData({
-                    selected: index
+                    selected: index,
+                    tabbars,
+                    switchStatus
                 });
             }
         }

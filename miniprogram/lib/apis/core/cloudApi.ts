@@ -53,7 +53,7 @@ class CloudApi extends AbstractApi {
     // 设置isPhoto
     setIsPhoto(val: Boolean): any {
         console.log('🚀 > setIsPhoto > val', val);
-        return this.isPhoto.setDataSync('isPhoto', val);
+        return this.isPhoto.setDataSync('isPhoto', val, true);
     }
     // 查询isPhoto
     getIsPhoto(): any {
