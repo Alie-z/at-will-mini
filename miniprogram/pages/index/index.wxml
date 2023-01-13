@@ -1,15 +1,21 @@
 <ow-custom-navigation title="At-Will" blur="true" color="#fff" backgroundColor="#ffffff00"></ow-custom-navigation>
 
-<block wx:for="{{list}}" wx:key="type">
-  <ow-title title="{{item.title}}"></ow-title>
-  <ow-image-list-h bindlong="handleFavorites" bindclick="handlePreview" data-type="{{item.type}}" id="{{item.type}}" height="{{350}}"></ow-image-list-h>
+<block wx:for="{{ list }}" wx:key="type">
+    <ow-title title="{{ item.title }}"></ow-title>
+    <ow-image-list-h
+        bindlong="handleFavorites"
+        bindclick="handlePreview"
+        data-type="{{ item.type }}"
+        id="{{ item.type }}"
+        height="{{ 350 }}"
+    ></ow-image-list-h>
 </block>
 
 <ow-title title="查看榜"></ow-title>
 <ow-image-list id="image-list" bindlong="handleFavorites" bindclick="handlePreview"></ow-image-list>
-<ow-loading wx:if="{{loading}}"></ow-loading>
+<ow-loading wx:if="{{ loading }}"></ow-loading>
 
 <!-- 预览 -->
-<include src="../../lib/mixins/preview/index.wxml" />
+<include src="../../lib/mixins/preview/index.wxml"></include>
 
-<ow-toast id="toast" ></ow-toast>
+<ow-toast id="toast"></ow-toast>

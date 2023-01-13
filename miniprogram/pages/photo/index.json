@@ -6,7 +6,8 @@
         "ow-image-list-h": "/components/ow-image-list/list-h",
         "ow-title": "/components/ow-title/index",
         "ow-image-preview": "/components/ow-image-preview/index",
-        "ow-preview-page": "/components/ow-preview-page/index"
+        "ow-preview-page": "/components/ow-preview-page/index",
+        "ow-photo-list": "/components/ow-photo-list/index"
     },
     "navigationStyle": "custom",
     "onReachBottomDistance": 800,

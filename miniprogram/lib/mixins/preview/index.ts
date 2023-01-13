@@ -19,6 +19,7 @@ export default Behavior({
         // 打开预览页
         handlePreview(e: WechatMiniprogram.CustomEvent) {
             const {index, list} = e.detail;
+            console.log('🚀 > handlePreview >  e.detail', e);
             this.setData({
                 previewShow: true,
                 previewIndex: index,

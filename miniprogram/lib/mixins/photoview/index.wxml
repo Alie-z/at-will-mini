@@ -1,0 +1,3 @@
+<ow-preview-page model:show="{{ previewShow }}">
+    <ow-photo-list list="{{ tagList }}"></ow-photo-list>
+</ow-preview-page>

@@ -51,7 +51,6 @@ Page({
     // 开通图集
     switchChange() {
         const switchStatus = app.$apis.getIsPhoto();
-        console.log('🚀 > switchChange > switchStatus', switchStatus);
         app.$apis.setIsPhoto(!switchStatus);
         toast.primary((switchStatus ? '已关闭' : '已开通') + ',请重启小程序。');
         wx.reLaunch({url: '/pages/ad/index'});

@@ -105,6 +105,7 @@ Page({
                 if (res) {
                     let {data, meta} = res;
                     imageList.add(data, reset);
+                    console.log('🚀 > .then > imageList', imageList);
 
                     this.setData({
                         title: this.title + `（${meta.total}）`,

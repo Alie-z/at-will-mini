@@ -17,6 +17,6 @@
 </block>
 
 <!-- 预览 -->
-<include src="../../lib/mixins/preview/index.wxml"></include>
+<include src="../../lib/mixins/photoview/index.wxml"></include>
 
 <ow-toast id="toast"></ow-toast>

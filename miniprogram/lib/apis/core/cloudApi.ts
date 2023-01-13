@@ -5,8 +5,15 @@ import config from '../../config';
 
 let catchDataMap = new Map();
 let catchMap = new Map();
+const info = wx.getAccountInfoSync();
+const SERVICE = info.miniProgram.envVersion === 'develop' ? 'wxcloudrun-koa' : 'koa-aync';
 
-const https = async (path: string, method = 'GET', isCatch = true): Promise<ICloud.CallContainerResult | null> => {
+const https = async (
+    path: string,
+    method = 'GET',
+    isCatch = true,
+    data?: any
+): Promise<ICloud.CallContainerResult | null> => {
     if (catchMap.has(path)) {
         return null;
     } else {
@@ -21,9 +28,10 @@ const https = async (path: string, method = 'GET', isCatch = true): Promise<IClo
             },
             path,
             header: {
-                'X-WX-SERVICE': 'koa-aync'
+                'X-WX-SERVICE': SERVICE
             },
-            method
+            method,
+            data
         })
         .catch(() => null);
 
@@ -49,6 +57,11 @@ class CloudApi extends AbstractApi {
         this.favorites = createCacheData('favorites');
         this.historys = createCacheData('historys');
         this.isPhoto = new CacheData('isPhoto');
+    }
+    // 设置isPhoto
+    getPhotoList(data: any): any {
+        console.log('🚀 > setIsPhoto > val', data);
+        return https('/api/photo/search', 'POST', true, data).then(res => res?.data);
     }
     // 设置isPhoto
     setIsPhoto(val: Boolean): any {

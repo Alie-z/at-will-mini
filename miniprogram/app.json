@@ -1,10 +1,10 @@
 {
     "pages": [
+        "pages/photo/index",
         "pages/ad/index",
         "pages/index/index",
         "pages/categorie/index",
         "pages/view/index",
-        "pages/photo/index",
         "pages/my/index",
         "pages/my/list/index"
     ],

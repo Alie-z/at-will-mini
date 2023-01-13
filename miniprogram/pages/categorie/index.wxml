@@ -49,5 +49,5 @@
 </ow-search>
 
 <!-- 预览 -->
-<include src="../../lib/mixins/preview/index.wxml" />
+<include src="../../lib/mixins/preview/index.wxml" ></include>
 <ow-toast id="toast" />
