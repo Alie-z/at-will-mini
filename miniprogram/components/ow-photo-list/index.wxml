@@ -1,20 +1,22 @@
-<view class="photo-list">
+<view class="photo-list" style="padding-top: {{ statusBarHeight + navigateContentHeight }}px;">
     <block wx:if="{{ list.length }}">
-        <!-- <scroll-view class="scrollview" scroll-x="{{ true }}" scroll-y="{{ false }}" show-scrollbar="false" bounces="true">
-
-        </scroll-view> -->
         <scroll-view
             scroll-y="true"
-            style="height: calc(100vh - 60px)"
-            bindscrolltoupper="upper"
-            bindscrolltolower="lower"
-            bindscroll="scroll"
+            style="height: calc(100vh - {{ statusBarHeight + navigateContentHeight }}px)"
+            bindscrolltolower="scrollLower"
+            lower-threshold="200px"
             scroll-into-view="green"
         >
             <view class="ul-wrap">
-                <view wx:for="{{ list }}" wx:key="index" class="content-list {{ index % 2 !== 0 && 'list-margin' }}">
+                <view
+                    wx:for="{{ list }}"
+                    wx:key="index"
+                    bindtap="handleImg"
+                    data-id="{{ item.id }}"
+                    data-num="{{ item.num }}"
+                    class="content-list {{ index % 2 !== 0 && 'list-margin' }}"
+                >
                     <image
-                        bindtap="handleChangeThumbImg"
                         lazy-load
                         data-index="{{ index }}"
                         class="img {{ previewItem.path === item.path ? 'active' : '' }}"
@@ -26,16 +28,12 @@
                     <view class="title">{{ item.title }}</view>
                 </view>
             </view>
+            <view wx:if="hasMore" class="no-more">没有更多了</view>
         </scroll-view>
     </block>
-    <block wx:else>
-        <view class="image-list" wx:for="{{ count }}" wx:key="index">
-            <ow-skeleton
-                wx:for="{{ 4 }}"
-                wx:key="index"
-                height="{{ width / 0.56 + 'rpx' }}"
-                width="{{ width + 'rpx' }}"
-            ></ow-skeleton>
+    <view class="skeleton-list" wx:else>
+        <view class="image-list" wx:for="{{ 2 }}" wx:key="index">
+            <ow-skeleton wx:for="{{ 4 }}" wx:key="index" height="{{ 500 + 'rpx' }}" width="100%"></ow-skeleton>
         </view>
-    </block>
+    </view>
 </view>

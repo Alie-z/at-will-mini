@@ -60,12 +60,10 @@ class CloudApi extends AbstractApi {
     }
     // 设置isPhoto
     getPhotoList(data: any): any {
-        console.log('🚀 > setIsPhoto > val', data);
-        return https('/api/photo/search', 'POST', true, data).then(res => res?.data);
+        return https('/api/photo/search', 'POST', false, data).then(res => res?.data);
     }
     // 设置isPhoto
     setIsPhoto(val: Boolean): any {
-        console.log('🚀 > setIsPhoto > val', val);
         return this.isPhoto.setDataSync('isPhoto', val, true);
     }
     // 查询isPhoto

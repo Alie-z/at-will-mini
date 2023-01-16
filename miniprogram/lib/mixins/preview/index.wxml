@@ -1,3 +1,3 @@
-<ow-preview-page model:show="{{ previewShow }}">
+<ow-preview-page model:show="{{ previewShow }}" zIndex="1009">
     <ow-image-preview list="{{ previewList }}" index="{{ previewIndex }}" type="{{ type }}"></ow-image-preview>
 </ow-preview-page>

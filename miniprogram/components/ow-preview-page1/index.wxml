@@ -1,0 +1,13 @@
+<view wx:if="{{ show }}" z-index="{{ zIndex }}" bind:afterleave="handleAfterLeave">
+    <view style="width: 100vw; height: 100vh">
+        <ow-custom-navigation
+            zIndex="{{ zIndex - 1 }}"
+            backgroundColor="transparent"
+            bindclose="handleClose"
+            showBack="{{ true }}"
+            blur="{{ true }}"
+        >
+        </ow-custom-navigation>
+        <slot></slot>
+    </view>
+</view>

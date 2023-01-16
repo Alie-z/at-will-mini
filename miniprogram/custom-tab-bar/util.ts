@@ -5,14 +5,14 @@ export const tabbars: Array<NavItem> = [
         text: '首页'
     },
     {
-        icon: 'icon-shoucang',
-        pagePath: '/pages/photo/index',
-        text: '图集'
-    },
-    {
         icon: 'icon-yingyong',
         pagePath: '/pages/categorie/index',
         text: '分类'
+    },
+    {
+        icon: 'icon-shoucang',
+        pagePath: '/pages/photo/index',
+        text: '图集'
     },
     {
         icon: 'icon-wode',

@@ -1,12 +1,12 @@
 .photo-list {
     position: fixed;
-    padding-top: 60px;
     top: -2px;
     bottom: -2px;
     left: -2px;
     right: -2px;
     background-color: rgba(0, 0, 0, 0.685);
-    z-index: 999;
+    z-index: 990;
+    backdrop-filter: blur(15rpx);
     .scrollview {
         width: 100%;
         height: 100vh;
@@ -58,6 +58,26 @@
             .list-margin {
                 margin-right: 0;
             }
+        }
+    }
+    .no-more {
+        width: 100%;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+    }
+}
+
+.skeleton-list {
+    padding: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+
+    .image-list {
+        flex: 1;
+
+        & + .image-list {
+            margin-left: 20rpx;
         }
     }
 }

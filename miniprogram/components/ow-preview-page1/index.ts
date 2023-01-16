@@ -3,6 +3,10 @@ Component({
         show: {
             type: Boolean,
             value: false
+        },
+        zIndex: {
+            type: Number,
+            value: 1001
         }
     },
     methods: {

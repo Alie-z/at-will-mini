@@ -1,3 +1,8 @@
-<ow-preview-page model:show="{{ previewShow }}">
-    <ow-photo-list list="{{ tagList }}"></ow-photo-list>
-</ow-preview-page>
+<ow-preview-page1 model:show="{{ tagPreviewShow }}">
+    <ow-photo-list
+        list="{{ tagList }}"
+        hasMore="{{ hasMore }}"
+        bindLower="scrollLower"
+        bindClickImg="handlePreview"
+    ></ow-photo-list>
+</ow-preview-page1>

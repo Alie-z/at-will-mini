@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/photo/index",
         "pages/ad/index",
+        "pages/photo/index",
         "pages/index/index",
         "pages/categorie/index",
         "pages/view/index",

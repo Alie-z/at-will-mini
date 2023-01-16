@@ -1,4 +1,6 @@
-<ow-custom-navigation title="At-Will" blur="true" color="#fff" backgroundColor="#ffffff00"></ow-custom-navigation>
+<ow-custom-navigation title="At-Will" blur="true" color="#fff" backgroundColor="#ffffff00">
+    <view class="close icon-sousuo" bindtap="openSearch"></view>
+</ow-custom-navigation>
 
 <block wx:for="{{ tag.classify }}" wx:key="item">
     <ow-title title="{{ item }}"></ow-title>
@@ -16,7 +18,17 @@
     </view>
 </block>
 
-<!-- 预览 -->
+<!-- 查询 -->
+<ow-search id="search" bindsearch="handleTag" data-search="true">
+    <ow-search-item label="{{ '关键字' }}">
+        <input value="{{ form.q }}" bindinput="onValueChange" data-type="q" cursor-spacing="50" />
+    </ow-search-item>
+</ow-search>
+
+<!-- tag预览 -->
 <include src="../../lib/mixins/photoview/index.wxml"></include>
+
+<!-- 写真预览 -->
+<include src="../../lib/mixins/preview/index.wxml"></include>
 
 <ow-toast id="toast"></ow-toast>
