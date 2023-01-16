@@ -23,7 +23,7 @@ Component({
             const switchStatus = app.$apis.getIsPhoto();
             let {tabbars} = this.data;
             if (!switchStatus) {
-                tabbars.splice(1, 1);
+                tabbars.splice(2, 1);
             }
             if (index > -1) {
                 this.setData({
