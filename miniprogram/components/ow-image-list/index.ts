@@ -50,7 +50,7 @@ Component({
             const newList = toTwoDimensionalArray(this.data.count);
             imgs.forEach(img => {
                 img.file_size_str = byte(img.file_size);
-                img.height = width / parseFloat(img.ratio);
+                img.height = width / parseFloat(img.ratio || '0.7');
                 img.original = img.thumbs.original;
 
                 let minIndex = minValIndex(sumHeight);
@@ -60,7 +60,7 @@ Component({
                     id: img.id,
                     path: img.path,
                     original: img.thumbs.original,
-                    height: width / parseFloat(img.ratio),
+                    height: width / parseFloat(img.ratio || '0.7'),
                     file_size_str: byte(img.file_size)
                 });
             });
